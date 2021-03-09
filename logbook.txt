@@ -1,2 +1,9 @@
+http://www.octetmalin.net/linux/tutoriels/ubuntu-personnaliser-live-cd-usb.php
 level00:
-	- 
+	- extract iso archive with :
+		"7z x -oSnowCrash SnowCrash.iso"
+	- modify isolinux.cfg : 
+		"append file=/cdrom/preseed/custom.seed boot=casper initrd=/casper/initrd.gz single --"
+	- rebuild ISO With :
+		"mkisofs -o SnowCrash_mod.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V "Custom SnowCrash Iso" ../SnowCrash"
+

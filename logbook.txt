@@ -20,8 +20,9 @@ level00 -> level00
 	find / -user flag00 2>/dev/null
 	cat /usr/sbin/john
 		search for "sbin john" -> john the ripper ?
+	use caesar cdiiddwpgswtgt
 
-	flag00 -> nottoohardhere (caesar +15)
+	flag00 -> nottoohardhere
 
 level01 -> x24ti5gi3x0ol2eh4esiuxias
 	scp passwd herrfalco@192.168.1.86:~/SnowCrash
@@ -203,9 +204,44 @@ level12 -> fa6v5ateaw21peobuub8ipe6s
 	getflag > /tmp/flag
 	<
 	chmod 777 on /tmp/_
+	vim /etc/apache2/sites-available/level12.conf
 	send cgi_request_level12
 
 	flag12 -> X
 
 level13 -> g1qKMiRpXf53AWhDaU7FEkczr
-	
+	run with ltrace -> getuid
+	run with gdb
+	b getuid
+	run
+	next til end of getuid
+	info registers
+	set $eax 4242
+	next til end
+
+	flag13 -> X
+
+level14 -> 2A31L79asukciNyi8uppkEuSx
+	nothing....
+	run getflag with ltrace -> ptrace
+	run with gdb to bypass ptrace
+	>
+	b ptrace
+	run
+	next
+	info registers
+	set $eax=0
+	info registers
+	next
+	b getuid
+	run
+	next
+	set $eax=0
+	next
+	next
+	info registers
+	set $eax=3014 (flag14)
+	info registers
+	<
+
+	flag14 -> 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ

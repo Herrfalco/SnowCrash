@@ -1,0 +1,26 @@
+- Connect with login: "level14" and password: "2A31L79asukciNyi8uppkEuSx"
+- nothing.... <- try to hack getflag
+- run getflag with ltrace <- ltrace usage detected with ptrace
+- run with gdb to bypass ptrace
+- b ptrace
+- run
+- next
+- info registers
+- set $eax=0
+- info registers
+- next
+	Check flag.Here is your token : 
+	Nope there is no token here for you sorry. Try again :)
+- try to modify uid like in level13
+- b getuid
+- run
+- next
+- set $eax=0
+- next
+- next
+- info registers
+- set $eax=3014 (flag14)
+- info registers
+- next
+	Check flag.Here is your token : 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
+- connect to flag14

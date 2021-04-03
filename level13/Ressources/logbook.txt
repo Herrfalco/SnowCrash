@@ -1,0 +1,14 @@
+- Connect with login: "level13" and password: "g1qKMiRpXf53AWhDaU7FEkczr"
+- ./level13
+	UID 2013 started us but we we expect 4242
+- run with ltrace
+	getuid() <- change value after this function
+- run with gdb
+- b getuid
+- run
+- next til end of getuid
+- info registers
+- set $eax=4242
+- info registers
+- next til end
+	your token is 2A31L79asukciNyi8uppkEuSx

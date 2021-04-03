@@ -1,0 +1,19 @@
+- Connect with login: "level09" and password: "25749xKZ8L7DkSCwJkT9dyv6f"
+- run level09
+	You need to provied only one arg.
+- run level09 token
+	tpmhr
+- run level09 bonjour
+	bppmszx
+- run level09 aaaaaaaaaa
+	abcdefghij
+- cat token
+	f4kmm6p|=�p�n��DB�Du{�� <- code to decode ? revert level09
+- scp -P 4242 decoder.c level09@192.168.1.?:/tmp
+- gcc -Wall -Wextra /tmp/decoder.c -o /tmp/decoder
+- cat /home/user/level09/token | /tmp/decoder
+	f3iji1ju5yuevaus41q1afiuq
+- connect to flag09
+- getflag
+	s5cAJpM8ev6XHw998pRWG728z
+

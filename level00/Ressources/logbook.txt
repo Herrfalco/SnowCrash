@@ -1,5 +1,5 @@
 - Connect with login: "level00" and password: "level00"
-- Try to find flag00 password > search for his files
+- Try to find flag00 password -> search for his files
 - find / -user flag00 2>/dev/null
 	/usr/sbin/john
 	/rofs/usr/sbin/john

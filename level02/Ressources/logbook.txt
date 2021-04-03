@@ -1,9 +1,9 @@
 - Connect with login: "level02" and password: "f2av5il02puano7naaf6adaaf"
 - ls
 	level02.pcap
-- pcap > packet capture
+- pcap -> packet capture
 - scp level02.pcap herrfalco@192.168.1.?:/?
-- tcpick -C -yP -r level02.pcap
+- sudo tcpick -C -yP -r level02.pcap
 	ft_waNDReL0L
 - log to flag02
 - getflag

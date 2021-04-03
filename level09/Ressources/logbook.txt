@@ -16,4 +16,3 @@
 - connect to flag09
 - getflag
 	s5cAJpM8ev6XHw998pRWG728z
-

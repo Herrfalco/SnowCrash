@@ -1,4 +1,3 @@
-- Connect with login: "level00" and password: "level00"
 - Try to find flag00 password -> search for his files
 - find / -user flag00 2>/dev/null
 	/usr/sbin/john
@@ -11,4 +10,3 @@
 	nottoohardhere	
 - log to flag00
 - getflag
-	x24ti5gi3x0ol2eh4esiuxias

